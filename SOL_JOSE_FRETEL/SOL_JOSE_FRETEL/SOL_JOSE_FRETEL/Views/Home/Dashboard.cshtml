@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 id="welcomeHeader">Bienvenido!</h1>
+            <div id="userData" data-email="@ViewData["UserEmail"]" style="display: none;"></div>
+            <p class="text-muted" id="fechaResumen"></p>
+        </div>
+    </div>
+
+    <div class="row" id="dashboardContainer"></div>
+</div>
+
+@section Scripts {
+    <script type="module">
+        import { initializeDashboard } from '/js/dashboard.js';
+        initializeDashboard().init();
+    </script>
+}
